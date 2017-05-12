@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-6">
+    <h1 class="section-title">stores</h1>
+    <br>
+    <a href="/stores/add" class="title-button btn-lg btn-primary outline">add store</a>
+    <hr>
+    <% @stores.each do |store| %>
+    <h3><a href="/stores/<%= store.id %>"><%= store.name %></a></h3>
+    <% end %>
+  </div>
+  <div class="col-xs-6">
+    <h1 class="section-title">shoes</h1>
+    <br>
+    <a href="/shoes/add" class="title-button btn-lg btn-primary outline">add shoe</a>
+    <hr>
+    <% @shoes.each do |shoe| %>
+    <h3><a href="/shoes/<%= shoe.id %>"><%= shoe.name %></a></h3>
+    <% end %>
+  </div>
+</div>
