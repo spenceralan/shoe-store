@@ -1,0 +1,9 @@
+<h1><%= @store.name %></h1>
+<br>
+<a href="<%= @store.id %>/edit" class="btn-lg btn-warning outline">edit store</a>
+<h2>available shoes</h2>
+<ul>
+  <% @store.shoes.each do |shoe| %>
+    <li><a href="/shoes/<%= shoe.id %>"><%= "#{shoe.name}, #{shoe.price}" %></a></li>
+  <% end %>
+</ul>

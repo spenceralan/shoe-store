@@ -1,0 +1,25 @@
+<form action="/store" method="post">
+
+  <div class="row">
+    <div class="col-xs-6">
+      <h2>add a store:</h2>
+      <label for="store-name">store name:</label>
+      <input type="text" name="store-name" class="form-control">
+      <br>
+      <button type="submit" class="btn-lg btn-success outline">add store</button>
+    </div>
+
+    <div class="col-xs-1">
+    </div>
+
+    <div class="col-xs-5">
+      <h2>available shoes</h2>
+      <br>
+      <div class="form-check">
+        <% @shoes.each do |shoe| %>
+          <div class="checkbox"><label><input value="<%= shoe.id %>" type="checkbox" name="shoes[][id]"><%= "#{shoe.name}, #{shoe.price}" %></label></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</form>
