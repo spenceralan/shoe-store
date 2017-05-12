@@ -1,7 +1,6 @@
 ENV["RACK_ENV"] = "test"
 
 require "bundler/setup"
-Dir[File.dirname(__FILE__) + '/../lib/*.rb'].each { |file| require file }
 Bundler.require :default, :test
 set :root, Dir.pwd
 
@@ -10,9 +9,11 @@ Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 require "./app"
 
+Dir[File.dirname(__FILE__) + '/../lib/*.rb'].each { |file| require file }
+
 RSpec.configure do |config|
   config.after(:each) do
-    StoresShoe.all.each do |d|
+    StoreShoe.all.each do |d|
       d.destroy
     end
     Shoe.all.each do |d|
