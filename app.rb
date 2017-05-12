@@ -63,3 +63,43 @@ end
 
 #shoes
 
+get "/shoes/add" do
+  @shoes = Shoe.all
+  erb :shoe_add
+end
+
+get "/shoes/:id/edit" do
+  shoe_id = params.fetch("id")
+  @shoe = Shoe.find(shoe_id)
+  @shoes = Shoe.all
+  erb :shoe_edit
+end
+
+post "/shoes" do
+  shoe_name = params.fetch("shoe-name")
+  shoe_price = params.fetch("shoe-price")
+  shoe = Shoe.create({name: shoe_name, price: shoe_price})
+  redirect "/shoes/#{shoe.id}"
+end
+
+patch "/shoes" do
+  shoe_id = params.fetch("shoe-id")
+  shoe_name = params.fetch("shoe-name")
+  shoe_price = params.fetch("shoe-price")
+  shoe = Shoe.find(shoe_id)
+  shoe.update({name: shoe_name, price: shoe_price})
+  redirect "/shoes/#{shoe.id}"
+end
+
+delete "/shoes" do
+  shoe_id = params.fetch("shoe-id")
+  @shoe = Shoe.find(shoe_id)
+  @shoe.destroy
+  redirect "/"
+end
+
+get "/shoes/:id" do
+  shoe_id = params.fetch("id")
+  @shoes = Shoe.find(shoe_id)
+  erb :shoe
+end

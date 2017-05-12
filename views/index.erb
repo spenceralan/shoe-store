@@ -14,7 +14,7 @@
     <a href="/shoes/add" class="title-button btn-lg btn-primary outline">add shoe</a>
     <br>
     <% @shoes.each do |shoe| %>
-    <h3><a href="/shoes/<%= shoe.id %>"><%= "#{shoe.name}, #{shoe.price}" %></a></h3>
+    <h3><a href="/shoes/<%= shoe.id %>"><%= "#{shoe.name}, #{shoe.price.to_currency}" %></a></h3>
     <% end %>
   </div>
 </div>

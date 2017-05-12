@@ -14,7 +14,7 @@
         <h2>update available shoes</h2>
         <div class="form-check">
           <% @shoes.each do |shoe| %>
-            <%= @store.shoes.include?(shoe) ? "<div class='checkbox'><label><input value='#{shoe.id}' type='checkbox' name='shoes[][id]' checked>#{shoe.name}</label></div>" : "<div class='checkbox'><label><input value='#{shoe.id}' type='checkbox' name='shoes[][id]'>#{shoe.name}</label></div>" %>
+            <%= @store.shoes.include?(shoe) ? "<div class='checkbox'><label><input value='#{shoe.id}' type='checkbox' name='shoes[][id]' checked>#{shoe.name}, #{shoe.price.to_currency}</label></div>" : "<div class='checkbox'><label><input value='#{shoe.id}' type='checkbox' name='shoes[][id]'>#{shoe.name}, #{shoe.price.to_currency}</label></div>" %>
           <% end %>
         </div>
       </div>

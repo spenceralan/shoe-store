@@ -12,3 +12,17 @@ class Shoe < ActiveRecord::Base
   end
 
 end
+
+# Numeric method from https://www.ruby-forum.com/topic/89085
+
+class Numeric
+  def to_currency( pre_symbol='$', thousands=',', decimal='.',
+post_symbol=nil )
+    "#{pre_symbol}#{
+      ( "%.2f" % self ).gsub(
+        /(\d)(?=(?:\d{3})+(?:$|\.))/,
+        "\\1#{thousands}"
+      )
+    }#{post_symbol}"
+  end
+end

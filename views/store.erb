@@ -4,6 +4,6 @@
 <h2>available shoes</h2>
 <ul>
   <% @store.shoes.each do |shoe| %>
-    <li><a href="/shoes/<%= shoe.id %>"><%= "#{shoe.name}, #{shoe.price}" %></a></li>
+    <li><a href="/shoes/<%= shoe.id %>"><%= "#{shoe.name}, #{shoe.price.to_currency}" %></a></li>
   <% end %>
 </ul>

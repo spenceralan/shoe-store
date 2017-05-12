@@ -1,0 +1,23 @@
+<h2><%= @shoe.name %></h2>
+<h3><%= @shoes.price.to_currency %></h3>
+
+<form action="/shoes" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="shoe-id" value="<%= @shoe.id %>">
+  <div class="row">
+    <div class="col-sm-6">
+      <label for="shoe-name">update name:</label>
+      <input type="text" name="shoe-name" class="form-control" value="<%= @shoe.name %>">
+      <label for="shoe-price">update price:</label>
+      <input type="text" name="shoe-price" class="form-control" value="<%= @shoe.price %>">
+    </div>
+  </div>
+  <br>
+  <button type="submit" class="btn-lg btn-success outline">update shoe</button>
+</form>
+<br>
+<form action="/shoes" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="shoe-id" value="<%= @shoe.id %>">
+  <button type="submit" class="btn-lg btn-danger outline">Delete shoe</button>
+</form>
