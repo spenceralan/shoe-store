@@ -18,8 +18,8 @@ Installation is quick and easy! First you can open this link https://murmuring-s
 
 Rake makes setting up a new databse on your machine quick and easy! There are two commands you will need to run from your terminal. Make sure you navigate to the correct directory first!
 
-bundle exec rake db:create
-bundle exec rake db:schema:load
+* bundle exec rake db:create
+* bundle exec rake db:schema:load
 
 And thats it!
 
