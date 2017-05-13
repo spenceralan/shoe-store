@@ -2,6 +2,16 @@
 
 What if you owned multiple shoe stores and lots of inventory? Well with this app you will be able to price all your shoes and update which stores have what shoes in stock! This app will allow you to create new stores and add new styles of shoes whenever you need to! It has also got your back with regards to bad data, the app validates everything thats input!
 
+### What I Learned
+
+The lesson that keeps giving, validation! ActiveRecord makes some things easier but introduces some new obstacles as well. I learned that to test for uniqueness I would have to run my callback first which in turn broke tests that expected the callback to happen after validation. I fixed the bug by updating the callback to only run if the property was present.
+
+I was pleasantly surprised that ActiveRecord validates numbers with decimals and that there is also an option to disallow decimals!
+
+In the same vein as validation, I learned about ActveRecord errors. It was great to know that if the object failed to save to the database then the object would be updated with the errors as to why. I had to read the documentation to figure out how to get at the messages without altering them but once I got that I displayed the error to the user.
+
+Something I got stuck on and had to rework was that I wanted to use a Flash cookie for error messages. Since I could not get this to work, I will be doing more research to figure out how to get Flash to work in Sinatra. My workaround was to use a cookie to store the error message from an ActiveRecord error and use that to display the message to the user. The problem with this would likely be persistence of the message but I set the cookie back to nil after it was displayed.
+
 ### Prerequisites
 
 Web browser with ES6 compatibility
@@ -32,6 +42,21 @@ And thats it!
 * Bootstrap https://getbootstrap.com/
 * ES6
 * Jquery https://jquery.com/
+
+## Screenshots
+
+#### Homepage
+
+![homepage screenshot](public/img/shot-home.png)
+
+#### Editing a store
+
+![homepage screenshot](public/img/shot-edit-store.png)
+
+
+#### Encountering an error
+
+![homepage screenshot](public/img/shot-error.png)
 
 ## Authors
 
