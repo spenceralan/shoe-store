@@ -1,18 +1,27 @@
-# <!--PROJECT NAME HERE-->
+# Shoe Store
 
-<!--PROJECT DESCRIPTION HERE-->
+What if you owned multiple shoe stores and lots of inventory? Well with this app you will be able to price all your shoes and update which stores have what shoes in stock! This app will allow you to create new stores and add new styles of shoes whenever you need to! It has also got your back with regards to bad data, the app validates everything thats input!
 
 ### Prerequisites
 
 Web browser with ES6 compatibility
 Examples: Chrome, Safari
 
-Ruby <!--VERSION HERE-->
+Ruby 2.4.1
 Bundler
 
 ### Installing
 
-Installation is quick and easy! First you can open this link <!--HEROKU LINK HERE--> to see the webpage in action live online. Or you can clone this repository to your machine, navigate to the file path in your terminal, and run 'app.rb' by typing '$ruby app.rb'. If you chose to clone the repository, after you run 'app.rb' you will need to copy the localhost path into your web browser. The standard localhost for Sinatra is port 4567
+Installation is quick and easy! First you can open this link https://epicodus-shoe-store.herokuapp.com/ to see the webpage in action live online. Or you can clone this repository to your machine, navigate to the file path in your terminal, and run 'app.rb' by typing $'bundle exec ruby app.rb'. If you chose to clone the repository you will need to follow the instructions for setting up your database first. After you run 'app.rb' you will need to copy the localhost path into your web browser. The standard localhost for Sinatra is port 4567.
+
+#### Setting up the Database
+
+Rake makes setting up a new databse on your machine quick and easy! There are two commands you will need to run from your terminal. Make sure you navigate to the correct directory first!
+
+bundle exec rake db:create
+bundle exec rake db:schema:load
+
+And thats it!
 
 ## Built With
 
@@ -26,13 +35,13 @@ Installation is quick and easy! First you can open this link <!--HEROKU LINK HER
 
 ## Authors
 
-* <!--YOUR NAME HERE-->
+* Spencer Alan Ruiz
 
 ## License
 
 MIT License
 
-Copyright (c) <!--YOUR NAME & YEAR HERE-->
+Copyright (c) 2017 Spencer Alan Ruiz
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
