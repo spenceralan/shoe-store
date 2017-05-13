@@ -11,7 +11,9 @@ class Shoe < ActiveRecord::Base
   private
 
   def capitalize_title
-    self.name = name.split.map(&:capitalize).join(" ")
+    if name.present?
+      self.name = name.split.map(&:capitalize).join(" ")
+    end
   end
 
 end

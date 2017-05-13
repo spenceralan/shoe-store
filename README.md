@@ -12,7 +12,7 @@ Bundler
 
 ### Installing
 
-Installation is quick and easy! First you can open this link https://epicodus-shoe-store.herokuapp.com/ to see the webpage in action live online. Or you can clone this repository to your machine, navigate to the file path in your terminal, and run 'app.rb' by typing $'bundle exec ruby app.rb'. If you chose to clone the repository you will need to follow the instructions for setting up your database first. After you run 'app.rb' you will need to copy the localhost path into your web browser. The standard localhost for Sinatra is port 4567.
+Installation is quick and easy! First you can open this link https://murmuring-shelf-47892.herokuapp.com/ to see the webpage in action live online. Or you can clone this repository to your machine, navigate to the file path in your terminal, and run 'app.rb' by typing $'bundle exec ruby app.rb'. If you chose to clone the repository you will need to follow the instructions for setting up your database first. After you run 'app.rb' you will need to copy the localhost path into your web browser. The standard localhost for Sinatra is port 4567.
 
 #### Setting up the Database
 
