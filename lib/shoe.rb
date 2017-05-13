@@ -1,9 +1,12 @@
 class Shoe < ActiveRecord::Base
   has_many :store_shoes
   has_many :stores, through: :store_shoes
-  validates :name, length: { maximum: 100 }
+  validates :name, length: { maximum: 100 },
+    presence: :true,
+    uniqueness: :true
+  validates :price, numericality: true
 
-  before_save :capitalize_title
+  before_validation :capitalize_title
 
   private
 

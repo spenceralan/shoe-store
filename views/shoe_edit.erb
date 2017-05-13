@@ -1,5 +1,5 @@
 <h2><%= @shoe.name %></h2>
-<h3><%= @shoes.price.to_currency %></h3>
+<h3><%= @shoe.price.to_currency %></h3>
 
 <form action="/shoes" method="post">
   <input type="hidden" name="_method" value="patch">

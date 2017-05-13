@@ -6,6 +6,7 @@ gem "sinatra-activerecord"
 gem "rake"
 gem "pg"
 gem "sinatra"
+gem "rack-flash3"
 gem "pry"
 
 group :test do

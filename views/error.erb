@@ -1,0 +1,6 @@
+<h1>Oh no! There was an error!</h1>
+
+<h4><%= session[:error].nil? ? "" : session[:error] %></h4>
+
+<% session[:error] = nil %>
+

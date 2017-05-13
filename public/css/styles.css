@@ -3,6 +3,19 @@ body {
   background-color: black;
 }
 
+ul {
+	list-style-type: none;
+}
+
+li {
+	font-size: 125%;
+}
+
+a, a:hover {
+	color: white;
+}
+
+
 .btn-primary.outline {
   background: none;
 	padding: 12px 22px;

@@ -1,7 +1,8 @@
 require "bundler/setup"
 Bundler.require :default
-
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
+
+enable :session
 
 helpers do
   def capture_boxes(store)
@@ -34,8 +35,13 @@ end
 post "/store" do
   store_name = params.fetch("store-name")
   store = Store.create({name: store_name})
-  capture_boxes(store)
-  redirect "/store/#{store.id}"
+  if store.errors.any? == true
+    session[:error] = store.errors.full_messages.first
+    erb :error
+  else
+    capture_boxes(store)
+    redirect "/store/#{store.id}"
+  end
 end
 
 patch "/store" do
@@ -44,8 +50,13 @@ patch "/store" do
   store = Store.find(store_id)
   store.update({name: updated_name})
   store.shoes.destroy_all
-  capture_boxes(store)
-  redirect "/store/#{store.id}"
+  if store.errors.any? == true
+    session[:error] = store.errors.full_messages.first
+    erb :error
+  else
+    capture_boxes(store)
+    redirect "/store/#{store.id}"
+  end
 end
 
 delete "/store" do
@@ -77,18 +88,28 @@ end
 
 post "/shoes" do
   shoe_name = params.fetch("shoe-name")
-  shoe_price = params.fetch("shoe-price")
+  shoe_price = params.fetch("shoe-price", 0)
   shoe = Shoe.create({name: shoe_name, price: shoe_price})
-  redirect "/shoes/#{shoe.id}"
+  if shoe.errors.any? == true
+    session[:error] = shoe.errors.full_messages.first
+    erb :error
+  else
+    redirect "/shoes/#{shoe.id}"
+  end
 end
 
 patch "/shoes" do
   shoe_id = params.fetch("shoe-id")
   shoe_name = params.fetch("shoe-name")
-  shoe_price = params.fetch("shoe-price")
+  shoe_price = params.fetch("shoe-price", 0)
   shoe = Shoe.find(shoe_id)
   shoe.update({name: shoe_name, price: shoe_price})
-  redirect "/shoes/#{shoe.id}"
+  if shoe.errors.any? == true
+    session[:error] = shoe.errors.full_messages.first
+    erb :error
+  else
+    redirect "/shoes/#{shoe.id}"
+  end
 end
 
 delete "/shoes" do
